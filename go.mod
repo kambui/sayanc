@@ -1,4 +1,4 @@
-module github.com/kambui/aurorabam
+module github.com/kambui/sayanc
 
 go 1.16
 
