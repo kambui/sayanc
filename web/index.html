@@ -27,12 +27,22 @@
 
         .custom-cursor {
             position: absolute;
-            width: 50px; /* Adjust size as needed */
-            height: 50px; /* Adjust size as needed */
+            width: 75px; /* Adjust size as needed */
+            height: 75px; /* Adjust size as needed */
             pointer-events: none;
             z-index: 9999;
             background: url('./images/sayan-c-cursor.gif') no-repeat center center;
             background-size: contain;
+            animation: cursor-animation infinite linear; /* Ensures the GIF loops */
+        }
+
+        @keyframes cursor-animation {
+            from {
+                background-position: 0;
+            }
+            to {
+                background-position: 100%;
+            }
         }
     </style>
     <noscript>
