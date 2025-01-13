@@ -17,10 +17,22 @@
     <link href="./css/bootstrap.min.css?ver=1.2.0" rel="stylesheet">
     <link href="./css/aos.css?ver=1.2.0" rel="stylesheet">
     <link href="./css/main.css?ver=1.2.0" rel="stylesheet">
-    <style type="text/css">
-      body {
-        cursor: url('./images/sayan-c-cursor.gif'), auto;
-      }
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .custom-cursor {
+            position: absolute;
+            width: 50px; /* Adjust size as needed */
+            height: 50px; /* Adjust size as needed */
+            pointer-events: none;
+            z-index: 9999;
+            background: url('./images/sayan-c-cursor.gif') no-repeat center center;
+            background-size: contain;
+        }
     </style>
     <noscript>
       <style type="text/css">
@@ -32,6 +44,15 @@
     </noscript>
   </head>
   <body id="top">
+    <div id="cursor" class="custom-cursor"></div>
+<script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+    });
+</script>
     <header class="bg-light">
       <nav class="navbar navbar-expand-lg navbar-light bg-light" id="header-nav" role="navigation">
         <div class="container"><a class="link-dark navbar-brand site-title mb-0" href="#">Sayan Chakrabarty</a>
