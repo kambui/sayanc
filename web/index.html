@@ -17,6 +17,34 @@
     <link href="./css/bootstrap.min.css?ver=1.2.0" rel="stylesheet">
     <link href="./css/aos.css?ver=1.2.0" rel="stylesheet">
     <link href="./css/main.css?ver=1.2.0" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            cursor: none;
+        }
+
+        .custom-cursor {
+            position: absolute;
+            width: 75px; /* Adjust size as needed */
+            height: 75px; /* Adjust size as needed */
+            pointer-events: none;
+            z-index: 9999;
+            background: url('./images/sayan-c-cursor.gif') no-repeat center center;
+            background-size: contain;
+            animation: cursor-animation infinite linear; /* Ensures the GIF loops */
+        }
+
+        @keyframes cursor-animation {
+            from {
+                background-position: 0;
+            }
+            to {
+                background-position: 100%;
+            }
+        }
+    </style>
     <noscript>
       <style type="text/css">
         [data-aos] {
@@ -27,9 +55,18 @@
     </noscript>
   </head>
   <body id="top">
+    <div id="cursor" class="custom-cursor"></div>
+<script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+    });
+</script>
     <header class="bg-light">
       <nav class="navbar navbar-expand-lg navbar-light bg-light" id="header-nav" role="navigation">
-        <div class="container"><a class="link-dark navbar-brand site-title mb-0" href="#">Sayan Chakrabarty</a>
+        <div class="container"><a class="link-dark navbar-brand site-title mb-0" href="#"><img src="images/logo.png" width="20%" height="20%"></img>Sayan Chakrabarty</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto me-2">
@@ -65,7 +102,7 @@
               }, 1500);
           </script>
             <h1 class="intro-title marker" data-aos="fade-left" data-aos-delay="50">I’m Sayan Chakrabarty</h1>
-            <p class="lead fw-normal mt-3" data-aos="fade-up" data-aos-delay="100">Photoghapher | 3D Modeler | Graphic Designer</p>
+            <p class="lead fw-normal mt-3" data-aos="fade-up" data-aos-delay="100">Photographer | Video Editor | Motion Graphic Designer | Graphic Designer</p>
             <div class="social-nav" data-aos="fade-up" data-aos-delay="200">
               <nav role="navigation">
                 <ul class="nav justify-content-left">
@@ -90,8 +127,8 @@
     <div class="row">
       <div class="col-md-6">
         <h2 class="h4 my-2">Hello! I am Sayan Chakrabarty.</h2>
-        <p>I am passionate about Graphic Design. I am a skilled 3D Environment Designer and master of graphic design tools such as Adobe Photoshop, Illustrator, Indesign, Blender. I am a quick learner and a great team worker that gets the job done quickly.</p>
-        <!--<p>I am passionate about Graphic Design. I am a skilled 3D Environment Modeler and master of graphic design tools such as Photoshop and Sketch. I am a quick learner and a team worker that gets the job done. I can easily capitalize on low hanging fruits and quickly maximize timely deliverables for real-time schemas.</p>-->
+        <p>I am a multidisciplinary artist with a strong command of graphic design, 3d art and video editing. I bring ideas to life using Adobe Photoshop, Illustrator, InDesign, Blender, Premiere Pro, and After Effects. With a refined visual sensibility, rapid adaptability, and a collaborative mindset, I consistently deliver impactful, high-quality work under demanding timelines.</p>
+        <!--<p>I am passionate about Graphic Design. I am a skilled 3D Environment Modeler and master of graphic design tools such as Photoshop and Sketch. I provide a comprehensive suite of services, enabling the rapid optimization and delivery of real-time schemas.</p>-->
         <div class="row mt-3">
           <!--<div class="col-sm-2">
             <div class="pb-1">Age:</div>
@@ -145,7 +182,7 @@
     </div>
     <div class="row py-3">
       <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="100"><img class="mb-2" src="images/RENDER_FINAL.png" width="96" height="96" alt="web design"/>
-        <div class="h5">3D Modelling</div>
+        <div class="h5">Video Editing</div>
       </div>
       <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="200"><img class="mb-2" src="images/graphic_design.png" width="96" height="96" alt="graphic design"/>
         <div class="h5">Graphic Design</div>
@@ -167,11 +204,12 @@
     <div class="text-center">
       <p class="mx-auto mb-3" style="max-width:600px">I am a quick learner and specialize in multitude of skills required for 3D Modelling, Photography, Motion Graphics and Graphic Design.</p>
     </div>
+    
     <div class="bg-light p-3">
       <div class="row">
         <div class="col-md-5">
           <div class="py-1">
-            <div class="d-flex text-small fw-bolder"><span class="me-auto">3D Modelling</span><span>90%</span></div>
+            <div class="d-flex text-small fw-bolder"><span class="me-auto">Krita</span><span>90%</span></div>
             <div class="progress my-1">
               <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="100" data-aos-anchor=".skills-section" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
@@ -240,67 +278,90 @@
 <div class="section px-2 px-lg-4 pt-5" id="portfolio">
   <div class="container">
     <div class="text-center mb-5">
-      <h2 class="marker marker-center">Portfolio </h2>
+      <h2 class="marker marker-center">Portfolio</h2>
     </div>
-    <div class="grid bp-gallery pb-3" data-aos="zoom-in-up" data-aos-delay="100">
-      <div class="grid-sizer"></div>
-      <div class="grid-item"><a href="https://dribbble.com">
-          <figure class="portfolio-item"><img src="images/portfolio/1-small.png" data-bp="images/portfolio/1.jpg"/>
-            <figcaption>
-              <h4 class="h5 mb-0">Web Design</h4>
-              <div>Dribbble.com</div>
-            </figcaption>
-          </figure></a></div>
-      <div class="grid-item"><a href="https://github.com">
-          <figure class="portfolio-item"><img src="images/portfolio/2-small.png" data-bp="images/portfolio/2.jpg" data-caption="Example of an optional caption."/>
-            <figcaption> 
-              <h4 class="h5 mb-0">Web Development</h4>
-              <div>GitHub.com</div>
-            </figcaption>
-          </figure></a></div>
-      <div class="grid-item"><a href="https://soundcloud.com/">
-          <figure class="portfolio-item"><img src="images/portfolio/3-small.png" data-bp="images/portfolio/3.jpg" data-caption="Example of an optional caption."/>
-            <figcaption> 
-              <h4 class="h5 mb-0">Audio Mixing</h4>
-              <div>Soundcloud.com</div>
-            </figcaption>
-          </figure></a></div>
-      <div class="grid-item"><a href="https://www.adobe.com/">
-          <figure class="portfolio-item"><img src="images/portfolio/4-small.png" data-bp="images/portfolio/4.jpg"/>
-            <figcaption>
-              <h4 class="h5 mb-0">Video Editing</h4>
-              <div>Adobe After Effects</div>
-            </figcaption>
-          </figure></a></div>
-      <div class="grid-item"><a href="https://www.adobe.com/">
-          <figure class="portfolio-item"><img src="images/portfolio/5-small.png" data-bp="images/portfolio/5.jpg"/>
-            <figcaption>
-              <h4 class="h5 mb-0">Photography</h4>
-              <div>Adobe Photoshop</div>
-            </figcaption>
-          </figure></a></div>
-      <div class="grid-item"><a href="https://www.android.com/">
-          <figure class="portfolio-item"><img src="images/portfolio/6-small.png" data-bp="images/portfolio/6.jpg"/>
-            <figcaption>
-              <h4 class="h5 mb-0">App Development</h4>
-              <div>Android</div>
-            </figcaption>
-          </figure></a></div>
-      <div class="grid-item"><a href="https://flutter.dev/">
-          <figure class="portfolio-item"><img src="images/portfolio/7-small.png" data-bp="images/portfolio/7.jpg"/>
-            <figcaption>
-              <h4 class="h5 mb-0">App Design</h4>
-              <div>Flutter</div>
-            </figcaption>
-          </figure></a></div>
-      <div class="grid-item"><a href="https://flutter.dev/">
-          <figure class="portfolio-item"><img src="images/portfolio/8-small.png" data-bp="images/portfolio/8.jpg"/>
-            <figcaption>
-              <h4 class="h5 mb-0">3D Modelling</h4>
-              <div>Flutter</div>
-            </figcaption>
-          </figure></a></div>
+    <!-- Video Portfolio -->
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <!--<iframe 
+          width="100%" 
+          height="200px" 
+          src="https://www.youtube.com/embed/AnRlXLgvKfE?si=_Whe9-thuCPFMMRE" 
+          title="Portfolio Video 1" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>-->
+        <iframe
+          width="100%"
+          height="200"
+          src="https://www.youtube.com/embed/AnRlXLgvKfE"
+          title="Portfolio Video 1"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+      </iframe>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <iframe 
+          width="100%" 
+          height="200px" 
+          src="https://www.youtube.com/embed/fHY4Ts8pc78" 
+          title="Portfolio Video 2" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <iframe 
+          width="100%" 
+          height="200px" 
+          src="https://www.youtube.com/embed/tKE429hVSYk?si=nKYy6LYsSDjVsbhd" 
+          title="Portfolio Video 3" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <iframe 
+          width="100%" 
+          height="200px" 
+          src="https://www.youtube.com/embed/VIDEO_ID_4" 
+          title="Portfolio Video 4" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <iframe 
+          width="100%" 
+          height="200px" 
+          src="https://www.youtube.com/embed/VIDEO_ID_5" 
+          title="Portfolio Video 5" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <iframe 
+          width="100%" 
+          height="200px" 
+          src="https://www.youtube.com/embed/VIDEO_ID_6" 
+          title="Portfolio Video 6" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
+  </div>
+</div>
+
+    
   </div>
 </div>
 <div class="section px-3 px-lg-4 pt-5" id="experience">
@@ -314,13 +375,13 @@
           <div class="card-header px-3 py-2">
             <div class="d-flex justify-content-between">
               <div>
-                <h3 class="h5 mb-1">3D Modelling</h3>
+                <h3 class="h5 mb-1">Video Editing</h3>
                 <!--<div class="text-muted text-small">Designerr Inc. <small>(2012-2014)</small></div>-->
               </div><img src="images/RENDER_FINAL.png" width="48" height="48" alt="ui-ux"/>
             </div>
           </div>
           <div class="card-body px-3 py-2">
-            <p>Welcome to the heart of innovation! As a dedicated 3D modeler, I bring your ideas to life by harnessing the power of cutting-edge design technology. Using industry-leading software and a meticulous eye for detail, I craft immersive 3D models that seamlessly blend creativity and functionality. From conceptualizing initial designs to refining intricate details, my passion lies in transforming visions into tangible, three-dimensional masterpieces. Whether it's architectural renderings, product prototypes, or character modeling, I employ a methodical approach to ensure precision and realism. <a href="https://www.youtube.com/sayan">Click on this link</a></p>
+            <p>I am a video editor driven by storytelling, rhythm, and emotion. Through careful pacing, seamless transitions, and purposeful visuals, I shape raw footage into compelling narratives that resonate with the audience. I work with precision and intent, blending sound, motion, and timing to elevate every frame. Whether crafting cinematic sequences, dynamic promos, or meaningful visual stories, I focus on clarity, impact, and flow.
           </div>
         </div>
       </div>
@@ -335,7 +396,7 @@
             </div>
           </div>
           <div class="card-body px-3 py-2">
-            <p>Welcome to a world where creativity meets motion – I employ a blend of artistic vision and technical prowess to bring your ideas to life. Armed with expertise in industry-leading software, I meticulously craft dynamic visual narratives that resonate with audiences. From conceptualization to execution, every project is an exploration of innovative design, captivating animation, and seamless storytelling. Whether it's a mesmerizing logo animation, a visually striking explainer video, or dynamic visual effects, my commitment lies in translating your concepts into compelling, motion-infused experiences.</p>
+            <p>As a motion graphics designer, I fuse creative vision with technical precision to animate compelling ideas. Leveraging industry-leading tools such as Adobe After Effects, Premiere Pro, and Blender, I manage the full production process from ideation and storyboarding to final execution and optimization. This results in dynamic visual narratives that captivate audiences, convey complex messages with clarity, and drive measurable engagement and inspiration.</p>
           </div>
         </div>
       </div>
@@ -350,7 +411,7 @@
             </div>
           </div>
           <div class="card-body px-3 py-2">
-            <p>Embark on a visual journey with my photography expertise, where every frame tells a unique story. Through a lens attuned to both technical mastery and artistic intuition, I capture the essence of moments with a passion for storytelling. From the play of light and shadow to the nuanced expressions that define human connection, my lens becomes a conduit for authentic narratives. Whether it's a portrait session, event coverage, or exploring the intricate details of the world around us, I approach each shot with a commitment to freeze the beauty of the fleeting. With an eye for composition and a dedication to harnessing the power of visual language, I strive to create images that resonate and endure.</p>
+            <p>I am a street photographer who captures the raw pulse of urban life through every frame. With technical mastery and artistic intuition, I seize fleeting moments, from light-dancing shadows to candid human connections, crafting enduring visual stories that resonate deeply.</p>
           </div>
         </div>
       </div>
@@ -365,7 +426,7 @@
             </div>
           </div>
           <div class="card-body px-3 py-2">
-            <p>Welcome to a realm where creativity meets precision – my graphic design studio. With a fervent commitment to transforming ideas into compelling visual narratives, I embark on a journey of innovation and aesthetic expression. Armed with a diverse toolkit of design software and a keen understanding of design principles, I craft visually stunning solutions tailored to your unique needs. From sleek branding elements that leave a lasting impression to vibrant and intuitive user interfaces that elevate digital experiences, my designs are a seamless blend of form and function. Every project is a canvas for innovation, where typography, color, and imagery converge to create a visual symphony. Let's collaborate to bring your brand to life and make a lasting impact in the dynamic landscape of design.</p>
+            <p>I am a graphic designer who fuses creativity with precision to craft compelling visual narratives. Mastering tools like Adobe Creative Suite, I blend innovative typography, color, and imagery into stunning branding, logos, and print materials-tailored solutions that elevate your brand and leave a lasting impact.</p>
           </div>
         </div>
       </div>
@@ -479,7 +540,7 @@
   <div class="container">
     <div class="my-3">
       <div class="h4">Sayan Chakrabarty</div>
-      <p>Photoghapher | Videographer | 3D Environment Modeler | Graphic Designer</p>
+      <p>Photographer | Video Editor | Motion Graphic Designer | Graphic Designer</p>
       <div class="social-nav">
         <nav role="navigation">
           <ul class="nav justify-content-center">
