@@ -207,6 +207,44 @@ img.avatar {
 }
 
 /* Portfolio */
+.portfolio-link-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  height: 100%;
+  padding: 2rem;
+  background-color: #F6E05E;
+  color: #212529;
+  text-decoration: none;
+}
+
+.portfolio-link-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-link-card span {
+  font-weight: 700;
+}
+
+.portfolio-link-card i {
+  margin-left: 0.5rem;
+}
+
+.portfolio-link-card:hover,
+.portfolio-link-card:focus-visible {
+  color: #212529;
+  outline: 3px solid #212529;
+  outline-offset: 3px;
+}
+
+.portfolio-link-card:hover h3,
+.portfolio-link-card:focus-visible h3 {
+  text-decoration: underline;
+}
+
 .portolio-section .container {
   padding: 0;
 }
