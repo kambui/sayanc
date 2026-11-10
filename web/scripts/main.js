@@ -12,7 +12,7 @@
 
   cursorImage.onload = () => { cursorReady = true; };
   cursorImage.onerror = () => { cursorReady = false; hideCursor(); };
-  cursorImage.src = './images/sayan-c-cursor.gif';
+  cursorImage.src = './images/sayan-c-cursor.gif?ver=1.2.3';
 
   document.addEventListener('pointermove', (event) => {
     if (!cursor || !cursorReady || !finePointer.matches || event.pointerType !== 'mouse') {
