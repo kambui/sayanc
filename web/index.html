@@ -17,34 +17,6 @@
     <link href="./css/bootstrap.min.css?ver=1.2.0" rel="stylesheet">
     <link href="./css/aos.css?ver=1.2.0" rel="stylesheet">
     <link href="./css/main.css?ver=1.2.0" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            cursor: none;
-        }
-
-        .custom-cursor {
-            position: absolute;
-            width: 75px; /* Adjust size as needed */
-            height: 75px; /* Adjust size as needed */
-            pointer-events: none;
-            z-index: 9999;
-            background: url('./images/sayan-c-cursor.gif') no-repeat center center;
-            background-size: contain;
-            animation: cursor-animation infinite linear; /* Ensures the GIF loops */
-        }
-
-        @keyframes cursor-animation {
-            from {
-                background-position: 0;
-            }
-            to {
-                background-position: 100%;
-            }
-        }
-    </style>
     <noscript>
       <style type="text/css">
         [data-aos] {
@@ -55,18 +27,10 @@
     </noscript>
   </head>
   <body id="top">
-    <div id="cursor" class="custom-cursor"></div>
-<script>
-    const cursor = document.getElementById('cursor');
-
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = `${e.pageX}px`;
-        cursor.style.top = `${e.pageY}px`;
-    });
-</script>
+    <div id="cursor" class="custom-cursor" aria-hidden="true"></div>
     <header class="bg-light">
       <nav class="navbar navbar-expand-lg navbar-light bg-light" id="header-nav" role="navigation">
-        <div class="container"><a class="link-dark navbar-brand site-title mb-0" href="#"><img src="images/logo.png" width="20%" height="20%"></img>Sayan Chakrabarty</a>
+        <div class="container"><a class="link-dark navbar-brand site-title mb-0" href="#"><img src="images/logo.png" width="40" height="40" alt="">Sayan Chakrabarty</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto me-2">

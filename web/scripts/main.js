@@ -1,6 +1,37 @@
 (function() {
   "use strict";
 
+  const cursor = document.getElementById('cursor');
+  const finePointer = window.matchMedia('(any-hover: hover) and (any-pointer: fine)');
+  const cursorImage = new Image();
+  let cursorReady = false;
+
+  function hideCursor() {
+    document.documentElement.classList.remove('custom-cursor-active');
+  }
+
+  cursorImage.onload = () => { cursorReady = true; };
+  cursorImage.onerror = () => { cursorReady = false; hideCursor(); };
+  cursorImage.src = './images/sayan-c-cursor.gif';
+
+  document.addEventListener('pointermove', (event) => {
+    if (!cursor || !cursorReady || !finePointer.matches || event.pointerType !== 'mouse') {
+      hideCursor();
+      return;
+    }
+    cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
+    document.documentElement.classList.add('custom-cursor-active');
+  });
+  document.documentElement.addEventListener('pointerleave', hideCursor);
+  document.addEventListener('pointerdown', (event) => {
+    if (event.pointerType !== 'mouse') hideCursor();
+  });
+  window.addEventListener('blur', hideCursor);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) hideCursor();
+  });
+  finePointer.addEventListener('change', hideCursor);
+
   window.addEventListener('load', () => {
     on_page_load()
   });

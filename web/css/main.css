@@ -26,6 +26,72 @@ html {
 }
 
 /* Header */
+#header-nav .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 100%;
+}
+
+#header-nav .navbar-brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+#header-nav .navbar-nav .nav-link {
+  white-space: nowrap;
+}
+
+@media (min-width: 992px) {
+  #header-nav .navbar-nav {
+    align-items: center;
+    gap: 1.25rem;
+    margin-right: 0 !important;
+  }
+
+  #header-nav .navbar-nav .nav-link {
+    padding-inline: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #header-nav .navbar-brand {
+    font-size: 1rem;
+    margin-right: 0;
+  }
+}
+
+/* Only replace the native pointer once the custom image is ready and in use. */
+.custom-cursor {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 75px;
+  /* Align the arrow tip inside the GIF's transparent canvas with the click point. */
+  margin-left: -28px;
+  margin-top: -23px;
+  pointer-events: none;
+  z-index: 2147483647;
+  background: url('../images/sayan-c-cursor.gif') center / contain no-repeat;
+}
+
+@media (any-hover: hover) and (any-pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active *,
+  html.custom-cursor-active *::before,
+  html.custom-cursor-active *::after {
+    cursor: none !important;
+  }
+
+  .custom-cursor-active .custom-cursor {
+    display: block;
+  }
+}
+
 .site-title {
   font-size: 1.5rem;
   font-weight: 700;
