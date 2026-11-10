@@ -44,10 +44,15 @@ html {
   white-space: nowrap;
 }
 
+#header-nav .navbar-nav .nav-link:hover,
+#header-nav .navbar-nav .nav-link:focus-visible {
+  color: #F6E05E !important;
+}
+
 @media (min-width: 992px) {
   #header-nav .navbar-nav {
     align-items: center;
-    gap: 1.25rem;
+    gap: 2rem;
     margin-right: 0 !important;
   }
 
