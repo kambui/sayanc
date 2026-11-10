@@ -133,6 +133,25 @@ html {
 }
 
 /* Hero (intro) section */
+.modeling-service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #F6E05E;
+  vertical-align: middle;
+}
+
+.modeling-service-icon img {
+  width: 108px;
+  height: 108px;
+  max-width: none;
+  flex-shrink: 0;
+}
+
 .intro-title {
   font-weight: 800;
 }
