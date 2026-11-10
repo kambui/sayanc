@@ -316,6 +316,47 @@ img.avatar {
 }
 
 /* Footer section */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.expertise-card .card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.25rem;
+}
+
+.expertise-card .card-body {
+  padding: 1.25rem;
+}
+
+.expertise-card h3 {
+  font-size: 1.125rem;
+}
+
+.expertise-modeling-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.expertise-modeling-icon img {
+  width: 54px;
+  height: 54px;
+}
+
+@media (min-width: 576px) {
+  .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 992px) {
+  .expertise-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .expertise-card .card-header { min-height: 140px; }
+}
+
 footer a:not(.nav-link) {
   color: inherit;
   font-weight: 600;
