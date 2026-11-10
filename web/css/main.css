@@ -127,6 +127,11 @@ html {
   color: rgba(0, 0, 0, 0.6) !important;
 }
 
+.social-nav .nav-link:hover,
+.social-nav .nav-link:focus-visible {
+  color: #F6E05E !important;
+}
+
 /* Hero (intro) section */
 .intro-title {
   font-weight: 800;
