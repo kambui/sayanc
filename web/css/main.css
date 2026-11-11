@@ -462,8 +462,8 @@ footer a:not(.nav-link) {
   10%, 85% { opacity: 1; }
   100% { transform: translateX(65%); opacity: 0; }
 }
-#services .col > img,
-#services .col > .modeling-service-icon {
+#services .service-icon-link > img,
+#services .service-icon-link > .modeling-service-icon {
   border-radius: 50%;
   transform-origin: center center;
   transition: transform .25s ease;
@@ -511,8 +511,8 @@ footer a:not(.nav-link) {
 .expertise-card h3 { font-size: 1rem; }
 @media (hover: hover) and (pointer: fine) {
   .portrait-sweep:hover::after { animation: portrait-light-sweep 1.5s ease-in-out 1 forwards; }
-  #services .col > img:hover,
-  #services .col > .modeling-service-icon:hover {
+  #services .service-icon-link > img:hover,
+  #services .service-icon-link > .modeling-service-icon:hover {
     transform: scale(1.08);
     box-shadow: none;
   }
@@ -520,7 +520,7 @@ footer a:not(.nav-link) {
 }
 @media (prefers-reduced-motion: reduce) {
   .portrait-sweep:hover::after { animation: none; }
-  #services .col > img, #services .col > .modeling-service-icon,
+  #services .service-icon-link > img, #services .service-icon-link > .modeling-service-icon,
   #skills .progress-bar::after { transition: none; }
 }
 
@@ -556,25 +556,17 @@ footer a:not(.nav-link) {
 .portfolio-copy-space { visibility: hidden; }
 .portfolio-typed { position: absolute; inset: 0; }
 
-/* A clear click-target cue around the custom arrow on portfolio cards. */
-.custom-cursor::after {
-  content: "";
-  position: absolute;
-  left: 28px;
-  top: 23px;
-  width: 34px;
-  height: 34px;
-  border: 2px solid #212529;
-  box-shadow: 0 0 0 2px #F6E05E;
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(.6);
-  opacity: 0;
-  transition: opacity .18s ease, transform .18s ease;
+
+.service-icon-link { display: inline-block; border-radius: 50%; }
+.service-icon-link:focus-visible { outline: 2px solid #212529; outline-offset: 4px; }
+.portfolio-link-card { transform-origin: center; transition: transform .25s ease; }
+#portfolio { scroll-margin-top: 100px; }
+html { scroll-behavior: smooth; }
+@media (hover: hover) and (pointer: fine) {
+ .portfolio-link-card:hover { transform: scale(1.03); }
 }
-.custom-cursor.portfolio-hover::after {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
+.portfolio-link-card:focus-visible { transform: scale(1.03); }
 @media (prefers-reduced-motion: reduce) {
-  .custom-cursor::after { transition: none; }
+ html { scroll-behavior: auto; }
+ .portfolio-link-card { transition: none; }
 }

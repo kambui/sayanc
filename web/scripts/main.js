@@ -8,7 +8,6 @@
 
   function hideCursor() {
     document.documentElement.classList.remove('custom-cursor-active');
-    if (cursor) cursor.classList.remove('portfolio-hover');
   }
 
   cursorImage.onload = () => { cursorReady = true; };
@@ -22,10 +21,6 @@
     }
     cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
     document.documentElement.classList.add('custom-cursor-active');
-    cursor.classList.toggle('portfolio-hover', !!event.target.closest('.portfolio-link-card'));
-  });
-  document.addEventListener('pointerover', (event) => {
-    if (cursor && event.pointerType === 'mouse') cursor.classList.toggle('portfolio-hover', !!event.target.closest('.portfolio-link-card'));
   });
   document.documentElement.addEventListener('pointerleave', hideCursor);
   document.addEventListener('pointerdown', (event) => {
