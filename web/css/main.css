@@ -422,3 +422,18 @@ footer a:not(.nav-link) {
 .entry-title a {
   text-decoration: none;
 }
+
+.phone-numbers {
+  white-space: nowrap;
+  font-size: clamp(12px, 3.4vw, 16px);
+}
+.cv-download {
+  color: inherit;
+  text-decoration: none;
+  transition: color .2s ease, text-shadow .2s ease;
+}
+.cv-download:hover,
+.cv-download:focus-visible {
+  color: #F6E05E;
+  text-shadow: 0 0 8px rgba(246, 224, 94, .5);
+}
