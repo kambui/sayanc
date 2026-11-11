@@ -437,3 +437,88 @@ footer a:not(.nav-link) {
   color: #F6E05E;
   text-shadow: 0 0 8px rgba(246, 224, 94, .5);
 }
+
+/* One sweep per hover entry; leaving resets the animation. */
+.portrait-sweep {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 30px;
+  isolation: isolate;
+}
+.portrait-sweep img { display: block; }
+.portrait-sweep::after {
+  content: "";
+  position: absolute;
+  inset: -30% -70%;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 42%, rgba(255,255,255,.12) 46%, rgba(255,255,255,.65) 50%, rgba(255,255,255,.12) 54%, transparent 58%);
+  transform: translateX(-65%);
+  opacity: 0;
+}
+@keyframes portrait-light-sweep {
+  0% { transform: translateX(-65%); opacity: 0; }
+  10%, 85% { opacity: 1; }
+  100% { transform: translateX(65%); opacity: 0; }
+}
+#services .col > img,
+#services .col > .modeling-service-icon {
+  border-radius: 50%;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.skills-intro { max-width: none; }
+@media (min-width: 1200px) {
+  .skills-intro { white-space: nowrap; font-size: clamp(12px, 1.15vw, 16px); }
+}
+#skills .progress {
+  overflow: visible;
+  position: relative;
+  border-radius: 1rem;
+}
+#skills .progress::before {
+  content: "";
+  position: absolute;
+  inset: -12px 0;
+}
+#skills .progress-bar {
+  position: relative;
+  overflow: visible;
+  border-radius: 1rem 0 0 1rem;
+}
+#skills .progress-bar::after {
+  content: "";
+  position: absolute;
+  inset: -2px 0;
+  border-radius: inherit;
+  background: #F6E05E;
+  filter: blur(9px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+.expertise-card { border-radius: 18px; overflow: hidden; }
+.expertise-card .card-header {
+  flex-direction: row;
+  align-items: center;
+  gap: .65rem;
+  padding: .9rem .75rem;
+  min-height: 84px;
+}
+.expertise-card .card-header > img,
+.expertise-card .card-header > span { flex-shrink: 0; width: 38px; height: 38px; }
+.expertise-card h3 { font-size: 1rem; }
+@media (hover: hover) and (pointer: fine) {
+  .portrait-sweep:hover::after { animation: portrait-light-sweep 1.5s ease-in-out 1 forwards; }
+  #services .col > img:hover,
+  #services .col > .modeling-service-icon:hover {
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 8px 22px rgba(246,224,94,.6);
+  }
+  #skills .progress:hover .progress-bar::after { opacity: .85; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portrait-sweep:hover::after { animation: none; }
+  #services .col > img, #services .col > .modeling-service-icon,
+  #skills .progress-bar::after { transition: none; }
+}
