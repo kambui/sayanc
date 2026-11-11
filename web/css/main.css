@@ -570,3 +570,39 @@ html { scroll-behavior: smooth; }
  html { scroll-behavior: auto; }
  .portfolio-link-card { transition: none; }
 }
+
+/* Both original 2000px canvases share exactly the same position and scale. */
+.meditation-scene {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 1;
+  isolation: isolate;
+}
+.meditation-scene > img {
+  grid-area: 1 / 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  align-self: start;
+  pointer-events: none;
+}
+.meditation-character {
+  z-index: 1;
+  animation: meditation-float 4s ease-in-out infinite;
+}
+.meditation-shadow {
+  /* Pivot is the centre of the supplied shadow's alpha bounds, not an offset. */
+  transform-origin: 49.625% 91.025%;
+  animation: meditation-shadow-breathe 4s ease-in-out infinite;
+}
+@keyframes meditation-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2.5%); }
+}
+@keyframes meditation-shadow-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .meditation-character, .meditation-shadow { animation: none; }
+}
