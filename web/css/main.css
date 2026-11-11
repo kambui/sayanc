@@ -574,7 +574,8 @@ html { scroll-behavior: smooth; }
 /* Both original 2000px canvases share exactly the same position and scale. */
 .meditation-scene {
   display: grid;
-  width: 100%;
+  width: 64%;
+  margin-inline: auto;
   aspect-ratio: 1;
   isolation: isolate;
 }
@@ -605,4 +606,8 @@ html { scroll-behavior: smooth; }
 }
 @media (prefers-reduced-motion: reduce) {
   .meditation-character, .meditation-shadow { animation: none; }
+}
+
+@media (max-width: 991.98px) {
+  .meditation-scene { width: 80%; max-width: 420px; }
 }
