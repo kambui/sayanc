@@ -173,7 +173,7 @@ func (s *contactServer) submit(w http.ResponseWriter, r *http.Request) {
 		respond(w, 502, "Delivery could not be confirmed. Your text is saved here; retry with the same details or email me directly.")
 		return
 	}
-	respond(w, 200, "Thanks! Your message has been submitted. I’ll get back to you soon.")
+	respond(w, 200, "Thank You! I'll get back to you soon!")
 }
 
 func (s *contactServer) digest(value string) string {
