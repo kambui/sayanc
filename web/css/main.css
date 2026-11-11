@@ -522,3 +522,35 @@ footer a:not(.nav-link) {
   #services .col > img, #services .col > .modeling-service-icon,
   #skills .progress-bar::after { transition: none; }
 }
+
+.portfolio-link-card { position: relative; overflow: hidden; }
+.portfolio-description {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: #F6E05E;
+  color: #212529;
+  transform: translateX(-100%);
+  display: flex;
+  align-items: center;
+  padding: clamp(14px, 2vw, 28px);
+  pointer-events: none;
+}
+.portfolio-copy {
+  position: relative;
+  display: block;
+  font-size: clamp(13px, 1.25vw, 18px);
+  font-weight: 600;
+  line-height: 1.5;
+}
+.portfolio-copy-space { visibility: hidden; }
+.portfolio-typed { position: absolute; inset: 0; }
