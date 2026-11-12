@@ -26,6 +26,77 @@ html {
 }
 
 /* Header */
+#header-nav .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 100%;
+}
+
+#header-nav .navbar-brand img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+#header-nav .navbar-nav .nav-link {
+  white-space: nowrap;
+}
+
+#header-nav .navbar-nav .nav-link:hover,
+#header-nav .navbar-nav .nav-link:focus-visible {
+  color: #F6E05E !important;
+}
+
+@media (min-width: 992px) {
+  #header-nav .navbar-nav {
+    align-items: center;
+    gap: 2rem;
+    margin-right: 0 !important;
+  }
+
+  #header-nav .navbar-nav .nav-link {
+    padding-inline: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #header-nav .navbar-brand {
+    font-size: 1rem;
+    margin-right: 0;
+  }
+}
+
+/* Only replace the native pointer once the custom image is ready and in use. */
+.custom-cursor {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 75px;
+  /* Align the arrow tip inside the GIF's transparent canvas with the click point. */
+  margin-left: -28px;
+  margin-top: -23px;
+  pointer-events: none;
+  z-index: 2147483647;
+  background: url('../images/sayan-c-cursor.gif?ver=1.2.3') center / contain no-repeat;
+}
+
+@media (any-hover: hover) and (any-pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active *,
+  html.custom-cursor-active *::before,
+  html.custom-cursor-active *::after {
+    cursor: none !important;
+  }
+
+  .custom-cursor-active .custom-cursor {
+    display: block;
+  }
+}
+
 .site-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -56,7 +127,31 @@ html {
   color: rgba(0, 0, 0, 0.6) !important;
 }
 
+.social-nav .nav-link:hover,
+.social-nav .nav-link:focus-visible {
+  color: #F6E05E !important;
+}
+
 /* Hero (intro) section */
+.modeling-service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #F6E05E;
+  vertical-align: middle;
+}
+
+.modeling-service-icon img {
+  width: 108px;
+  height: 108px;
+  max-width: none;
+  flex-shrink: 0;
+}
+
 .intro-title {
   font-weight: 800;
 }
@@ -131,6 +226,23 @@ img.avatar {
 }
 
 /* Portfolio */
+.portfolio-link-card {
+  display: block;
+  text-decoration: none;
+}
+
+.portfolio-link-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.portfolio-link-card:hover,
+.portfolio-link-card:focus-visible {
+  outline: 3px solid #F6E05E;
+  outline-offset: 3px;
+}
+
 .portolio-section .container {
   padding: 0;
 }
@@ -183,6 +295,47 @@ img.avatar {
 }
 
 /* Footer section */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.expertise-card .card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.25rem;
+}
+
+.expertise-card .card-body {
+  padding: 1.25rem;
+}
+
+.expertise-card h3 {
+  font-size: 1.125rem;
+}
+
+.expertise-modeling-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.expertise-modeling-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+@media (min-width: 576px) {
+  .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 992px) {
+  .expertise-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .expertise-card .card-header { min-height: 140px; }
+}
+
 footer a:not(.nav-link) {
   color: inherit;
   font-weight: 600;
@@ -268,4 +421,193 @@ footer a:not(.nav-link) {
 
 .entry-title a {
   text-decoration: none;
+}
+
+.phone-numbers {
+  white-space: nowrap;
+  font-size: clamp(12px, 3.4vw, 16px);
+}
+.cv-download {
+  color: inherit;
+  text-decoration: none;
+  transition: color .2s ease, text-shadow .2s ease;
+}
+.cv-download:hover,
+.cv-download:focus-visible {
+  color: #F6E05E;
+  text-shadow: 0 0 8px rgba(246, 224, 94, .5);
+}
+
+/* One sweep per hover entry; leaving resets the animation. */
+.portrait-sweep {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 30px;
+  isolation: isolate;
+}
+.portrait-sweep img { display: block; }
+.portrait-sweep::after {
+  content: "";
+  position: absolute;
+  inset: -30% -70%;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 42%, rgba(255,255,255,.12) 46%, rgba(255,255,255,.65) 50%, rgba(255,255,255,.12) 54%, transparent 58%);
+  transform: translateX(-65%);
+  opacity: 0;
+}
+@keyframes portrait-light-sweep {
+  0% { transform: translateX(-65%); opacity: 0; }
+  10%, 85% { opacity: 1; }
+  100% { transform: translateX(65%); opacity: 0; }
+}
+#services .service-icon-link > img,
+#services .service-icon-link > .modeling-service-icon {
+  border-radius: 50%;
+  transform-origin: center center;
+  transition: transform .25s ease;
+}
+.skills-intro { max-width: none; }
+@media (min-width: 1200px) {
+  .skills-intro { white-space: nowrap; font-size: clamp(12px, 1.15vw, 16px); }
+}
+#skills .progress {
+  overflow: visible;
+  position: relative;
+  border-radius: 1rem;
+}
+#skills .progress::before {
+  content: "";
+  position: absolute;
+  inset: -12px 0;
+}
+#skills .progress-bar {
+  position: relative;
+  overflow: visible;
+  border-radius: 1rem 0 0 1rem;
+}
+#skills .progress-bar::after {
+  content: "";
+  position: absolute;
+  inset: -2px 0;
+  border-radius: inherit;
+  background: #F6E05E;
+  filter: blur(9px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+.expertise-card { border-radius: 18px; overflow: hidden; }
+.expertise-card .card-header {
+  flex-direction: row;
+  align-items: center;
+  gap: .65rem;
+  padding: .9rem .75rem;
+  min-height: 84px;
+}
+.expertise-card .card-header > img,
+.expertise-card .card-header > span { flex-shrink: 0; width: 38px; height: 38px; }
+.expertise-card h3 { font-size: 1rem; }
+@media (hover: hover) and (pointer: fine) {
+  .portrait-sweep:hover::after { animation: portrait-light-sweep 1.5s ease-in-out 1 forwards; }
+  #services .service-icon-link > img:hover,
+  #services .service-icon-link > .modeling-service-icon:hover {
+    transform: scale(1.08);
+    box-shadow: none;
+  }
+  #skills .progress:hover .progress-bar::after { opacity: .85; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portrait-sweep:hover::after { animation: none; }
+  #services .service-icon-link > img, #services .service-icon-link > .modeling-service-icon,
+  #skills .progress-bar::after { transition: none; }
+}
+
+.portfolio-link-card { position: relative; overflow: hidden; }
+.portfolio-description {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: #F6E05E;
+  color: #212529;
+  transform: translateX(-100%);
+  display: flex;
+  align-items: center;
+  padding: clamp(14px, 2vw, 28px);
+  pointer-events: none;
+}
+.portfolio-copy {
+  position: relative;
+  display: block;
+  font-size: clamp(13px, 1.25vw, 18px);
+  font-weight: 600;
+  line-height: 1.5;
+}
+.portfolio-copy-space { visibility: hidden; }
+.portfolio-typed { position: absolute; inset: 0; }
+
+
+.service-icon-link { display: inline-block; border-radius: 50%; }
+.service-icon-link:focus-visible { outline: 2px solid #212529; outline-offset: 4px; }
+.portfolio-link-card { transform-origin: center; transition: transform .25s ease; }
+#portfolio { scroll-margin-top: 100px; }
+html { scroll-behavior: smooth; }
+@media (hover: hover) and (pointer: fine) {
+ .portfolio-link-card:hover { transform: scale(1.03); }
+}
+.portfolio-link-card:focus-visible { transform: scale(1.03); }
+@media (prefers-reduced-motion: reduce) {
+ html { scroll-behavior: auto; }
+ .portfolio-link-card { transition: none; }
+}
+
+/* Both original 2000px canvases share exactly the same position and scale. */
+.meditation-scene {
+  display: grid;
+  width: 64%;
+  margin-inline: auto;
+  aspect-ratio: 1;
+  isolation: isolate;
+}
+.meditation-scene > img {
+  grid-area: 1 / 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  align-self: start;
+  pointer-events: none;
+}
+.meditation-character {
+  z-index: 1;
+  animation: meditation-float 4s ease-in-out infinite;
+}
+.meditation-shadow {
+  /* Pivot is the centre of the supplied shadow's alpha bounds, not an offset. */
+  transform-origin: 49.625% 91.025%;
+  animation: meditation-shadow-breathe 4s ease-in-out infinite;
+}
+@keyframes meditation-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2.5%); }
+}
+@keyframes meditation-shadow-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .meditation-character, .meditation-shadow { animation: none; }
+}
+
+@media (max-width: 991.98px) {
+  .meditation-scene { width: 80%; max-width: 420px; }
 }

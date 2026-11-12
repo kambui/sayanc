@@ -16,35 +16,7 @@
     <link href="./css/bootstrap-icons/bootstrap-icons.css?ver=1.2.0" rel="stylesheet">
     <link href="./css/bootstrap.min.css?ver=1.2.0" rel="stylesheet">
     <link href="./css/aos.css?ver=1.2.0" rel="stylesheet">
-    <link href="./css/main.css?ver=1.2.0" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            cursor: none;
-        }
-
-        .custom-cursor {
-            position: absolute;
-            width: 75px; /* Adjust size as needed */
-            height: 75px; /* Adjust size as needed */
-            pointer-events: none;
-            z-index: 9999;
-            background: url('./images/sayan-c-cursor.gif') no-repeat center center;
-            background-size: contain;
-            animation: cursor-animation infinite linear; /* Ensures the GIF loops */
-        }
-
-        @keyframes cursor-animation {
-            from {
-                background-position: 0;
-            }
-            to {
-                background-position: 100%;
-            }
-        }
-    </style>
+    <link href="./css/main.css?ver=1.3.6" rel="stylesheet">
     <noscript>
       <style type="text/css">
         [data-aos] {
@@ -55,18 +27,10 @@
     </noscript>
   </head>
   <body id="top">
-    <div id="cursor" class="custom-cursor"></div>
-<script>
-    const cursor = document.getElementById('cursor');
-
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = `${e.pageX}px`;
-        cursor.style.top = `${e.pageY}px`;
-    });
-</script>
+    <div id="cursor" class="custom-cursor" aria-hidden="true"></div>
     <header class="bg-light">
       <nav class="navbar navbar-expand-lg navbar-light bg-light" id="header-nav" role="navigation">
-        <div class="container"><a class="link-dark navbar-brand site-title mb-0" href="#"><img src="images/logo.png" width="20%" height="20%"></img>Sayan Chakrabarty</a>
+        <div class="container"><a class="link-dark navbar-brand site-title mb-0" href="#"><img src="images/logo.png" width="80" height="80" alt="">Sayan Chakrabarty</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto me-2">
@@ -87,7 +51,12 @@
   <div class="cover bg-light">
     <div class="container px-3">
       <div class="row">
-        <div class="col-lg-6 p-2"><img class="img-fluid" src="images/first.png" alt="hello"/></div>
+        <div class="col-lg-6 p-2">
+          <div class="meditation-scene">
+            <img class="meditation-shadow" src="images/meditation-shadow.png" width="2000" height="2000" alt="" aria-hidden="true">
+            <img class="meditation-character" src="images/meditation-character.png" width="2000" height="2000" alt="Sayan meditating while floating">
+          </div>
+        </div>
         <div class="col-lg-6">
           <div class="mt-5">
             <p id="hello_lang" class="lead text-uppercase mb-1" style="font-size: 24px; color: #000000;" font-weight: bold;">Hello !</p>
@@ -102,7 +71,7 @@
               }, 1500);
           </script>
             <h1 class="intro-title marker" data-aos="fade-left" data-aos-delay="50">I’m Sayan Chakrabarty</h1>
-            <p class="lead fw-normal mt-3" data-aos="fade-up" data-aos-delay="100">Photographer | Video Editor | Motion Graphic Designer | Graphic Designer</p>
+            <p class="lead fw-normal mt-3" data-aos="fade-up" data-aos-delay="100">Multidisciplinary Artist | Visual Storyteller</p>
             <div class="social-nav" data-aos="fade-up" data-aos-delay="200">
               <nav role="navigation">
                 <ul class="nav justify-content-left">
@@ -152,23 +121,29 @@
             <div class="pb-1">Phone:</div>
           </div>
           <div class="col-sm-10">
-            <div class="pb-1 fw-bolder">+91 9674232927</div>
+            <div class="pb-1 fw-bolder phone-numbers">+91 9674232927 / +61 412972286</div>
           </div>
           <div class="col-sm-2">
             <div class="pb-1">Address:</div>
           </div>
           <div class="col-sm-10">
-            <div class="pb-1 fw-bolder">Kolkata, India</div>
+            <div class="pb-1 fw-bolder">Melbourne, Australia</div>
           </div>
           <div class="col-sm-2">
-            <div class="pb-1">Staus:</div>
+            <div class="pb-1">Status:</div>
           </div>
           <div class="col-sm-10">
             <div class="pb-1 fw-bolder">Single</div>
           </div>
+          <div class="col-sm-2">
+            <div class="pb-1">CV:</div>
+          </div>
+          <div class="col-sm-10">
+            <div class="pb-1 fw-bolder"><a class="cv-download" href="downloads/Sayan-Chakrabarty-CV.pdf" download="Sayan-Chakrabarty-CV.pdf">Download</a></div>
+          </div>
         </div>
       </div>
-      <div class="col-md-5 offset-md-1" data-aos="fade-left" data-aos-delay="100"><img class="avatar img-fluid mt-2" src="images/sayan_img.jpg" width="400" height="400" alt="Walter Patterson"/></div>
+      <div class="col-md-5 offset-md-1" data-aos="fade-left" data-aos-delay="100"><div class="portrait-sweep mt-2"><img class="avatar img-fluid" src="images/sayan_img.jpg" width="400" height="400" alt="Sayan Chakrabarty"/></div></div>
     </div>
   </div>
 </div>
@@ -178,20 +153,24 @@
       <h2 class="marker marker-center">My Work</h2>
     </div>
     <div class="text-center">
-      <p class="mx-auto mb-3" style="max-width:600px"> I offer multiple services and I can quickly maximize timely deliverables for real-time schemas.</p>
+      <p class="mx-auto mb-3"> I offer multiple services and I can quickly maximize timely deliverables for real-time schemas.</p>
     </div>
-    <div class="row py-3">
-      <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="100"><img class="mb-2" src="images/RENDER_FINAL.png" width="96" height="96" alt="web design"/>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 justify-content-center py-3">
+      <div class="col text-center mb-3" data-aos="fade-up" data-aos-delay="100"><a class="service-icon-link" href="#portfolio" aria-label="View Video Editing portfolio"><img class="mb-2" src="images/RENDER_FINAL.png" width="96" height="96" alt="web design"/></a>
         <div class="h5">Video Editing</div>
       </div>
-      <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="200"><img class="mb-2" src="images/graphic_design.png" width="96" height="96" alt="graphic design"/>
+      <div class="col text-center mb-3" data-aos="fade-up" data-aos-delay="200"><a class="service-icon-link" href="#portfolio" aria-label="View Graphic Design portfolio"><img class="mb-2" src="images/graphic_design.png" width="96" height="96" alt="graphic design"/></a>
         <div class="h5">Graphic Design</div>
       </div>
-      <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="300"><img class="mb-2" src="images/videography_sayan.png" width="96" height="96" alt="ui-ux"/>
+      <div class="col text-center mb-3" data-aos="fade-up" data-aos-delay="300"><a class="service-icon-link" href="#portfolio" aria-label="View Motion Graphics portfolio"><img class="mb-2" src="images/videography_sayan.png" width="96" height="96" alt="ui-ux"/></a>
         <div class="h5">Motion Graphics</div>
       </div>
-      <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="400"><img class="mb-2" src="images/photography_sayan.png" width="96" height="96" alt="app development"/>
+      <div class="col text-center mb-3" data-aos="fade-up" data-aos-delay="400"><a class="service-icon-link" href="#portfolio" aria-label="View Photography portfolio"><img class="mb-2" src="images/photography_sayan.png" width="96" height="96" alt="app development"/></a>
         <div class="h5">Photography</div>
+      </div>
+      <div class="col text-center mb-3" data-aos="fade-up" data-aos-delay="500">
+        <a class="service-icon-link" href="#portfolio" aria-label="View 3D Modeling portfolio"><span class="modeling-service-icon mb-2"><img src="images/3d-modeling.png?ver=2" width="108" height="108" alt="3D Modeling"/></span></a>
+        <div class="h5">3D Modeling</div>
       </div>
     </div>
   </div>
@@ -202,7 +181,7 @@
       <h2 class="marker marker-center">My Skills</h2>
     </div>
     <div class="text-center">
-      <p class="mx-auto mb-3" style="max-width:600px">I am a quick learner and specialize in multitude of skills required for 3D Modelling, Photography, Motion Graphics and Graphic Design.</p>
+      <p class="skills-intro mx-auto mb-3">I am a quick learner and specialize in multitude of skills required for 3D Modelling, Photography, Motion Graphics and Graphic Design.</p>
     </div>
     
     <div class="bg-light p-3">
@@ -223,7 +202,7 @@
           <div class="py-1">
             <div class="d-flex text-small fw-bolder"><span class="me-auto">Photography</span><span>90%</span></div>
             <div class="progress my-1">
-              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="py-1">
@@ -235,7 +214,7 @@
           <div class="py-1">
             <div class="d-flex text-small fw-bolder"><span class="me-auto">Substance Painter</span><span>75%</span></div>
             <div class="progress my-1">
-              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
         </div>
@@ -243,31 +222,31 @@
           <div class="py-1">
             <div class="d-flex text-small fw-bolder"><span class="me-auto">Blender</span><span>80%</span></div>
             <div class="progress my-1">
-              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="py-1">
             <div class="d-flex text-small fw-bolder"><span class="me-auto">Maya</span><span>75%</span></div>
             <div class="progress my-1">
-              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="py-1">
             <div class="d-flex text-small fw-bolder"><span class="me-auto">Indesign</span><span>75%</span></div>
             <div class="progress my-1">
-              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="500" data-aos-anchor=".skills-section" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="500" data-aos-anchor=".skills-section" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="py-1">
             <div class="d-flex text-small fw-bolder"><span class="me-auto">Illustrator</span><span>70%</span></div>
             <div class="progress my-1">
-              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="600" data-aos-anchor=".skills-section" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="600" data-aos-anchor=".skills-section" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="py-1">
             <div class="d-flex text-small fw-bolder"><span class="me-auto">Photoshop</span><span>90%</span></div>
             <div class="progress my-1">
-              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
         </div>
@@ -280,79 +259,48 @@
     <div class="text-center mb-5">
       <h2 class="marker marker-center">Portfolio</h2>
     </div>
-    <!-- Video Portfolio -->
     <div class="row">
       <div class="col-lg-4 col-md-6 mb-4">
-        <!--<iframe 
-          width="100%" 
-          height="200px" 
-          src="https://www.youtube.com/embed/AnRlXLgvKfE?si=_Whe9-thuCPFMMRE" 
-          title="Portfolio Video 1" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>-->
-        <iframe
-          width="100%"
-          height="200"
-          src="https://www.youtube.com/embed/_rFMDFSQ_Dk"
-          title="Portfolio Video 1"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-      </iframe>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <iframe 
-          width="100%" 
-          height="200px" 
-          src="https://www.youtube.com/embed/fHY4Ts8pc78" 
-          title="Portfolio Video 2" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <iframe 
-          width="100%" 
-          height="200px" 
-          src="https://www.youtube.com/embed/tKE429hVSYk?si=nKYy6LYsSDjVsbhd" 
-          title="Portfolio Video 3" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <iframe
-          width="100%"
-          height="200"
-          src="https://drive.google.com/file/d/1mAQ2wqFKOx2STGx4H9QnZ6nFoA-G_heU/view?usp=drive_link"
-          title="Portfolio Drive 4"
-          frameborder="0"
-          allow="autoplay"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <a 
-          href="https://drive.google.com/drive/folders/1a2pdxO1nY-0bJq-L89-81NdSuHYh7IhZ"
-          target="_blank"
-          style="z-index:9999; position:relative; color:red;">
-          Additional Work
+        <a class="portfolio-link-card" href="https://www.youtube.com/watch?v=_rFMDFSQ_Dk">
+          <img src="images/thumbnails/portfolio.png" width="2080" height="1000" alt="Portfolio" loading="lazy" decoding="async">
+          <span class="portfolio-description">A collection of animation, motion graphics, and visual stories showcasing my creative skills and ideas.</span>
+          <span class="portfolio-overlay" aria-hidden="true"><span class="portfolio-copy"><span class="portfolio-copy-space">A collection of animation, motion graphics, and visual stories showcasing my creative skills and ideas.</span><span class="portfolio-typed"></span></span></span>
         </a>
       </div>
       <div class="col-lg-4 col-md-6 mb-4">
-        <iframe 
-          width="100%" 
-          height="200px" 
-          src="https://drive.google.com/file/d/1p0Z0pIoZ6HG1BmOSldpJ8wGgmiKkur0U/view?usp=drivesdk" 
-          title="Portfolio Drive 6" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
+        <a class="portfolio-link-card" href="https://www.youtube.com/watch?v=fHY4Ts8pc78">
+          <img src="images/thumbnails/fumes-of-fate.png" width="2080" height="1000" alt="Fumes of Fate – Awareness Film" loading="lazy" decoding="async">
+          <span class="portfolio-description">An awareness film exploring climate change through visual storytelling, encouraging reflection on our shared future.</span>
+          <span class="portfolio-overlay" aria-hidden="true"><span class="portfolio-copy"><span class="portfolio-copy-space">An awareness film exploring climate change through visual storytelling, encouraging reflection on our shared future.</span><span class="portfolio-typed"></span></span></span>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <a class="portfolio-link-card" href="https://www.youtube.com/watch?v=tKE429hVSYk">
+          <img src="images/thumbnails/liquifero.png" width="2080" height="1000" alt="Liquifero – CGI Ad" loading="lazy" decoding="async">
+          <span class="portfolio-description">A CGI advertisement presenting refreshing fruit drinks through colorful visuals, detailed modeling, and engaging animation.</span>
+          <span class="portfolio-overlay" aria-hidden="true"><span class="portfolio-copy"><span class="portfolio-copy-space">A CGI advertisement presenting refreshing fruit drinks through colorful visuals, detailed modeling, and engaging animation.</span><span class="portfolio-typed"></span></span></span>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <a class="portfolio-link-card" href="https://drive.google.com/file/d/1mAQ2wqFKOx2STGx4H9QnZ6nFoA-G_heU/view?usp=drive_link">
+          <img src="images/thumbnails/graphic-design.png" width="2080" height="1000" alt="Portfolio Project 4" loading="lazy" decoding="async">
+          <span class="portfolio-description">A selection of posters, branding, and promotional designs combining clear messages with thoughtful visual choices.</span>
+          <span class="portfolio-overlay" aria-hidden="true"><span class="portfolio-copy"><span class="portfolio-copy-space">A selection of posters, branding, and promotional designs combining clear messages with thoughtful visual choices.</span><span class="portfolio-typed"></span></span></span>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <a class="portfolio-link-card" href="https://drive.google.com/drive/folders/1a2pdxO1nY-0bJq-L89-81NdSuHYh7IhZ">
+          <img src="images/thumbnails/additional-work.png" width="2080" height="1000" alt="Additional Work" loading="lazy" decoding="async">
+          <span class="portfolio-description">A collection of research, sketches, and studies exploring art, design, lighting, and visual storytelling techniques.</span>
+          <span class="portfolio-overlay" aria-hidden="true"><span class="portfolio-copy"><span class="portfolio-copy-space">A collection of research, sketches, and studies exploring art, design, lighting, and visual storytelling techniques.</span><span class="portfolio-typed"></span></span></span>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <a class="portfolio-link-card" href="https://drive.google.com/file/d/1p0Z0pIoZ6HG1BmOSldpJ8wGgmiKkur0U/view?usp=drivesdk">
+          <img src="images/thumbnails/photography.png" width="2080" height="1000" alt="Portfolio Project 6" loading="lazy" decoding="async">
+          <span class="portfolio-description">Photographs capturing everyday life, people, and places through thoughtful framing, natural light, and meaningful moments.</span>
+          <span class="portfolio-overlay" aria-hidden="true"><span class="portfolio-copy"><span class="portfolio-copy-space">Photographs capturing everyday life, people, and places through thoughtful framing, natural light, and meaningful moments.</span><span class="portfolio-typed"></span></span></span>
+        </a>
       </div>
     </div>
   </div>
@@ -362,71 +310,46 @@
   </div>
 </div>
 <div class="section px-3 px-lg-4 pt-5" id="experience">
-  <div class="container-narrow">
+  <div class="container">
     <div class="text-center mb-5">
       <h2 class="marker marker-center">Fields of Expertise</h2>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card mb-3" data-aos="fade-right" data-aos-delay="100">
-          <div class="card-header px-3 py-2">
-            <div class="d-flex justify-content-between">
-              <div>
-                <h3 class="h5 mb-1">Video Editing</h3>
-                <!--<div class="text-muted text-small">Designerr Inc. <small>(2012-2014)</small></div>-->
-              </div><img src="images/RENDER_FINAL.png" width="48" height="48" alt="ui-ux"/>
-            </div>
-          </div>
-          <div class="card-body px-3 py-2">
-            <p>I am a video editor driven by storytelling, rhythm, and emotion. Through careful pacing, seamless transitions, and purposeful visuals, I shape raw footage into compelling narratives that resonate with the audience. I work with precision and intent, blending sound, motion, and timing to elevate every frame. Whether crafting cinematic sequences, dynamic promos, or meaningful visual stories, I focus on clarity, impact, and flow.
-          </div>
+    <div class="expertise-grid">
+      <article class="card expertise-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-header">
+          <img src="images/RENDER_FINAL.png" width="48" height="48" alt="">
+          <h3 class="h5 mb-0">Video Editing</h3>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card mb-3" data-aos="fade-left" data-aos-delay="300">
-          <div class="card-header px-3 py-2">
-            <div class="d-flex justify-content-between">
-              <div>
-                <h3 class="h5 mb-1">Motion Graphics</h3>
-                <!--<div class="text-muted text-small">MakeMyApp LLC. <small>(2015-2018)</small></div>-->
-              </div><img src="images/videography_sayan.png" width="48" height="48" alt="app development"/>
-            </div>
-          </div>
-          <div class="card-body px-3 py-2">
-            <p>As a motion graphics designer, I fuse creative vision with technical precision to animate compelling ideas. Leveraging industry-leading tools such as Adobe After Effects, Premiere Pro, and Blender, I manage the full production process from ideation and storyboarding to final execution and optimization. This results in dynamic visual narratives that captivate audiences, convey complex messages with clarity, and drive measurable engagement and inspiration.</p>
-          </div>
+        <div class="card-body"><p class="mb-0">I shape footage into compelling stories through thoughtful pacing, seamless transitions, and sound, creating films and promos with clarity, emotion, and impact.</p></div>
+      </article>
+      <article class="card expertise-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-header">
+          <img src="images/videography_sayan.png" width="48" height="48" alt="">
+          <h3 class="h5 mb-0">Motion Graphics</h3>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card mb-3" data-aos="fade-right" data-aos-delay="200">
-          <div class="card-header px-3 py-2">
-            <div class="d-flex justify-content-between">
-              <div>
-                <h3 class="h5 mb-1">Photography</h3>
-                <!--<div class="text-muted text-small">Webbie LLC. <small>(2018-2020)</small></div>-->
-              </div><img src="images/photography_sayan.png" width="48" height="48" alt="web design"/>
-            </div>
-          </div>
-          <div class="card-body px-3 py-2">
-            <p>I am a street photographer who captures the raw pulse of urban life through every frame. With technical mastery and artistic intuition, I seize fleeting moments, from light-dancing shadows to candid human connections, crafting enduring visual stories that resonate deeply.</p>
-          </div>
+        <div class="card-body"><p class="mb-0">I bring ideas to life through animation, combining design, movement, and storytelling to create engaging visuals that communicate clearly.</p></div>
+      </article>
+      <article class="card expertise-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="card-header">
+          <img src="images/photography_sayan.png" width="48" height="48" alt="">
+          <h3 class="h5 mb-0">Photography</h3>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card mb-3" data-aos="fade-left" data-aos-delay="400">
-          <div class="card-header px-3 py-2">
-            <div class="d-flex justify-content-between">
-              <div>
-                <h3 class="h5 mb-1">Graphic Design</h3>
-                <!--<div class="text-muted text-small">Coder Inc. <small>(2020-2021)</small></div>-->
-              </div><img src="images/graphic_design.png" width="48" height="48" alt="full stack"/>
-            </div>
-          </div>
-          <div class="card-body px-3 py-2">
-            <p>I am a graphic designer who fuses creativity with precision to craft compelling visual narratives. Mastering tools like Adobe Creative Suite, I blend innovative typography, color, and imagery into stunning branding, logos, and print materials-tailored solutions that elevate your brand and leave a lasting impact.</p>
-          </div>
+        <div class="card-body"><p class="mb-0">I capture urban life, fleeting moments, and human connections, using light and composition to create authentic visual stories.</p></div>
+      </article>
+      <article class="card expertise-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="card-header">
+          <img src="images/graphic_design.png" width="48" height="48" alt="">
+          <h3 class="h5 mb-0">Graphic Design</h3>
         </div>
-      </div>
+        <div class="card-body"><p class="mb-0">I combine typography, color, and imagery to create distinctive branding, logos, and print designs that communicate your message with clarity.</p></div>
+      </article>
+      <article class="card expertise-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="card-header">
+          <span class="modeling-service-icon expertise-modeling-icon"><img src="images/3d-modeling.png?ver=2" alt="" width="54" height="54"></span>
+          <h3 class="h5 mb-0">3D Modeling</h3>
+        </div>
+        <div class="card-body"><p class="mb-0">I create detailed 3D models, combining form, texture, and lighting to bring products, objects, and imagined worlds to life.</p></div>
+      </article>
     </div>
   </div>
 </div>
@@ -482,21 +405,26 @@
     </div>
     <div class="row">
       <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
-        <div class="bg-light my-2 p-3 pt-2"><form action="https://formspree.io/your@email.com"
-    method="POST">
+        <div class="bg-light my-2 p-3 pt-2"><form id="contact-form" action="/api/contact" method="POST">
     <div class="form-group my-2">
       <label for="name" class="form-label fw-bolder">Name</label>
-      <input class="form-control" type="text" id="name" name="name" required>
+      <input class="form-control" type="text" id="name" name="name" maxlength="120" autocomplete="name" required>
     </div>
     <div class="form-group my-2">
       <label for="email" class="form-label fw-bolder">Email</label>
-      <input class="form-control" type="email" id="email" name="_replyto" required>
+      <input class="form-control" type="email" id="email" name="email" maxlength="254" autocomplete="email" required>
     </div>
   <div class="form-group my-2">
     <label for="message" class="form-label fw-bolder">Message</label>
-    <textarea class="form-control" style="resize: none;" id="message" name="message" rows="4" required></textarea>
+    <textarea class="form-control" id="message" name="message" rows="4" maxlength="5000" required></textarea>
   </div>
-  <button class="btn btn-primary mt-2" type="submit">Send</button>
+  <div hidden aria-hidden="true"><label for="contact-website">Leave blank</label><input id="contact-website" name="website" tabindex="-1" autocomplete="off"></div>
+  <div id="contact-captcha" class="my-2"></div>
+  <p class="small">Your name, email and message are sent through Resend to my inbox. Google reCAPTCHA protects this form.</p>
+  <p id="contact-status" role="status" aria-live="polite" class="small mb-2"></p>
+  <button id="contact-send" class="btn btn-primary mt-2" type="submit" disabled>Send</button>
+  <p class="small mt-2 mb-0">You can also <a href="mailto:sayanc432@gmail.com">email me directly</a>.</p>
+  <noscript><p>Please enable JavaScript to use the form, or use the email link above.</p></noscript>
 </form>
         </div>
       </div>
@@ -525,7 +453,7 @@
               <div class="pb-1">Phone:</div>
             </div>
             <div class="col-sm-10">
-              <div class="pb-1 fw-bolder">+91 9674232927</div>
+              <div class="pb-1 fw-bolder phone-numbers">+91 9674232927 / +61 412972286</div>
             </div>
           </div>
         </div>
@@ -537,7 +465,7 @@
   <div class="container">
     <div class="my-3">
       <div class="h4">Sayan Chakrabarty</div>
-      <p>Photographer | Video Editor | Motion Graphic Designer | Graphic Designer</p>
+      <p>Multidisciplinary Artist | Visual Storyteller</p>
       <div class="social-nav">
         <nav role="navigation">
           <ul class="nav justify-content-center">
@@ -565,6 +493,8 @@
     <script src="./scripts/purecounter.min.js?ver=1.2.0"></script>
     <script src="./scripts/bootstrap.bundle.min.js?ver=1.2.0"></script>
     <script src="./scripts/aos.min.js?ver=1.2.0"></script>
-    <script src="./scripts/main.js?ver=1.2.0"></script>
-  </body>
+    <script src="./scripts/main.js?ver=1.2.5"></script>
+    <script src="./scripts/contact.js?ver=1.0.0" defer></script>
+  <script src="./scripts/portfolio-hover.js?ver=1.0.0" defer></script>
+</body>
 </html>
